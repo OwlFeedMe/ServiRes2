@@ -1,0 +1,30 @@
+ HttpClient httpclient = HttpClientBuilder.create().build();  // the http-client, that will send the request
+            HttpGet httpGet = new HttpGet("https://api.clashofclans.com/v1/clans/%23202C8RGUC");   // the http GET request
+            httpGet.addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImEyN2FkYWUwLTJhMDEtNGMzZS05ZjQ2LTQzMTk1MjVkNWU0YSIsImlhdCI6MTU1NzAyNDYzNiwic3ViIjoiZGV2ZWxvcGVyLzY0NWYwMzUyLTQ1YWEtZmI5Yy0zNGY5LTNjMmYxNjU1NmU0YyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE4Ni4zMS4xMi4yMTciXSwidHlwZSI6ImNsaWVudCJ9XX0.Zo646QdP8V2KIM_9BV9ghtEenbk_xwYOD79hDMbZ5-9TU5LFdYslbnAXXBILYtli4SorZyOwJ0MIkUt7SQAL3A"); // add the authorization header to the request
+            HttpResponse response = httpclient.execute(httpGet); // the client executes the request and gets a response
+
+
+// URI:
+    // /contextPath/servletPath/Clan
+    @POST
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
+    public Employee addEmployee(Employee emp) {
+//        return EmployeeDAO.addEmployee(emp);
+        return null;
+    }
+
+    // URI:
+    // /contextPath/servletPath/Clan
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
+    public Employee updateEmployee(Employee emp) {
+//        return EmployeeDAO.updateEmployee(emp);
+        return null;
+    }
+
+    @DELETE
+    @Path("/{empNo}")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
+    public void deleteEmployee(@PathParam("empNo") String empNo) {
+//        EmployeeDAO.deleteEmployee(empNo);
+    }

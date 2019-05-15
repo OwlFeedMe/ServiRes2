@@ -6,17 +6,25 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  * Main class.
  *
  */
 public class Main {
+
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://localhost:8080/myapp/";
+
+    public static final String BASE_URI = "http://localhost:3000/myapp/";
 
     /**
-     * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
+     * Starts Grizzly HTTP server exposing JAX-RS resources defined in this
+     * application.
+     *
      * @return Grizzly HTTP server.
      */
     public static HttpServer startServer() {
@@ -31,15 +39,21 @@ public class Main {
 
     /**
      * Main method.
+     *
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         final HttpServer server = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+        Main main = new Main();
+    
         System.in.read();
         server.stop();
     }
-}
 
+   
+
+   
+}
